@@ -10,7 +10,13 @@ winBtn.addEventListener('click', handleClickWin)
 resetBtn.addEventListener('click', startTimer)
 
 function handleClickWin() {
-
+  confetti.start(500)
+  let message
+  winTime = seconds
+  if (min < 1) { message = `YAY! You won in ${sec} seconds!`}
+  else if (min < 2) { message = `YAY! You won in ${min} minute and ${sec} seconds!`}
+  else { message = `YAY! You won in ${min} minutes and ${sec} seconds!`}
+  renderMessage(message)
 }
 
 function startTimer() {
